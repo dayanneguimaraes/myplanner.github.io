@@ -1,0 +1,29 @@
+app-tarefas-dia, app-lembrete, app-objetivos, app-informacoes {
+    width: 100%;
+}
+
+.grid-container {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-item {
+    height: 100%;
+}
+
+.tarefas {
+    grid-row: span 2;
+}
+
+.objetivos {
+    grid-row: span 2;
+}
+
+.lembrete {
+    grid-row: span 1;
+}
+
+.informacoes {
+    grid-row: span 1;
+}

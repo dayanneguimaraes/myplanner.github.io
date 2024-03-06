@@ -1,0 +1,25 @@
+<div class="full-width">
+    <mat-card class="full-width card">
+        <mat-card-content>
+            <h1 class="">Humor</h1>
+
+            <div class="heart-list">
+                <button mat-icon-button *ngFor="let heart of hearts; let i = index" (click)="toggleHeart(i)">
+                  <mat-icon>{{ heart.completed ? 'favorite' : 'favorite_border' }}</mat-icon>
+                </button>
+              </div>
+        </mat-card-content>
+    </mat-card>
+    <mat-card class="full-width card frases">
+        <mat-card-content>
+            <h1 class="">Frase do dia</h1>
+            <mat-form-field>
+                <mat-label>Frase</mat-label>
+                <input matInput [(ngModel)]="frase">
+                <span matPrefix>
+                    <mat-icon>add</mat-icon>
+                </span>
+            </mat-form-field>
+        </mat-card-content>
+    </mat-card>
+</div>

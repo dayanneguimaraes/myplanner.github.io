@@ -1,0 +1,38 @@
+<div class="full-width">
+    <mat-card class="full-width card">
+        <mat-card-content>
+            <h1 class="example-h2">Meus objetivos de hoje</h1>
+
+            <mat-form-field>
+                <mat-label>Data</mat-label>
+                <input matInput [matDatepicker]="picker">
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+              </mat-form-field>
+            <ul>
+                <li *ngFor="let item of listItens">
+                    <mat-checkbox *ngIf="!item.completed" class="example-margin" [(ngModel)]="item.completed">{{ item.title }}</mat-checkbox>
+                </li>
+                <li>
+                    <mat-form-field>
+                        <mat-label>Objetivos</mat-label>
+                        <input matInput [(ngModel)]="tarefaDia" (keyup.enter)="submitValue($event)">
+                        <span matPrefix>
+                            <mat-icon>add</mat-icon>
+                        </span>
+                    </mat-form-field>
+                </li>
+            </ul>
+            <h3 class="completas">Completas</h3>
+            <ul>
+                <li *ngFor="let item of listItens">
+                    <mat-checkbox class="checkbox-completed" 
+                        [(ngModel)]="item.completed"
+                        *ngIf="item.completed"    
+                    >{{ item.title }}</mat-checkbox>
+                </li>
+            </ul>
+        </mat-card-content>
+    </mat-card>
+</div>

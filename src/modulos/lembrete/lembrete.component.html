@@ -1,0 +1,29 @@
+<div class="full-width">
+    <mat-card class="full-width card">
+        <mat-card-content>
+            <h1 class="example-h2">Lembretes</h1>
+
+            <ul>
+                <li *ngFor="let item of listItens">
+                    {{ item.horario }}
+                    {{ item.title }}
+                </li>
+                <li>
+                    <mat-form-field>
+                        <mat-label>Horario</mat-label>
+                        <input matInput [(ngModel)]="horario">
+                    </mat-form-field>
+                </li>
+                <li>
+                    <mat-form-field>
+                        <mat-label>Lembretes</mat-label>
+                        <input matInput [(ngModel)]="lembrete" (keyup.enter)="submitValue($event)">
+                        <span matPrefix>
+                            <mat-icon>add</mat-icon>
+                        </span>
+                    </mat-form-field>
+                </li>
+            </ul>
+        </mat-card-content>
+    </mat-card>
+</div>

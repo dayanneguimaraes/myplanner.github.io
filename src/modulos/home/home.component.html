@@ -1,0 +1,21 @@
+<div>
+    <header class="header">
+      <a href="/" class="logo">My Planner</a>
+      <nav class="navbar">
+        <button mat-icon-button color="accent" aria-label="menu"  (click)="drawer.toggle()">
+          <mat-icon aria-hidden="false" aria-label="icone do menu">menu</mat-icon>
+        </button>
+        <div class="navbar-superior">
+          <mat-icon>account_circle</mat-icon>
+        </div>
+      </nav>
+    </header>
+    <mat-drawer-container class="container" [hasBackdrop]="">
+      <mat-drawer class="menu-lateral" #drawer [mode]="'side'" [opened]="isDrawerOpened" style="border: none;">
+        <app-menu></app-menu>
+      </mat-drawer>
+      <mat-drawer-content class="body">
+          <router-outlet></router-outlet>
+        </mat-drawer-content>
+      </mat-drawer-container>
+</div>
